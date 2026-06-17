@@ -9,12 +9,12 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export const sendMail = async ({ to, subject, text }) => {
+export const sendMail = async ({to}) => {
   const info = await transporter.sendMail({
     from: "noreply@example.com",
     to,
-    subject,
-    text,
+    subject="Welcome mail form shahil verma",
+    text="the is the welcome by shahil verma , I am learnign the bull mq for better api response",
   });
 
   return info;

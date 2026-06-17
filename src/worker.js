@@ -5,7 +5,7 @@ import { sendMail } from "./services/mail.services.js";
 const worker = new Worker(
   "Send-emails",
   async (job) => {
-    await sendMail(job.data);
+    await sendMail(job.data.to);
   },
   {
     connection,
