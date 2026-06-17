@@ -1,5 +1,5 @@
 {
-  "name": "yes",
+  "name": "Async_Job_Queue&Notification_System",
   "version": "1.0.0",
   "description": "make this project to learn about redis queuew",
   "license": "ISC",
@@ -8,9 +8,5 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "dotenv": "^17.4.2",
-    "nodemailer": "^9.0.0"
   }
 }

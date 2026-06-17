@@ -1,5 +1,5 @@
 import {notificationQueue} from "../queue.js"
-
+import { ApiResponse } from "../utils/api_response.js"
 const welcome_emails= async(req,res)=>{
     const job = await notificationQueue.add(
         "Send-emails",
@@ -10,7 +10,7 @@ const welcome_emails= async(req,res)=>{
         }
     )
     res.status(201).json(
-        //left part 
+        new ApiResponse(201,null,"successfully add the job")
     )
 }
 
