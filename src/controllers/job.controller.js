@@ -3,8 +3,8 @@ import { ApiError } from "../utils/api_error.js";
 import { ApiResponse } from "../utils/api_response.js"
 import { asyncHandler } from "../utils/async_handler.js";
 const welcome_emails= asyncHandler( async(req,res)=>{
-     if (!req.body.to || !req.body.subject) {
-       throw new ApiError(400, "Email and subject are required");
+     if (!req.body.to) {
+       throw new ApiError(400, "Email is required");
     }
     const job = await notificationQueue.add(
         "Testing-mail",
