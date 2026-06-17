@@ -4,7 +4,7 @@ import { ApiResponse } from "../utils/api_response.js"
 import { asyncHandler } from "../utils/async_handler.js";
 const welcome_emails= asyncHandler( async(req,res)=>{
      if (!req.body.to) {
-       throw new ApiError(400, "Email is required");
+       throw new ApiError(400, "Email and subject are required");
     }
     const job = await notificationQueue.add(
         "Testing-mail",
