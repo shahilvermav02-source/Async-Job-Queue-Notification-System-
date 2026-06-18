@@ -1,4 +1,4 @@
-import {notificationQueue} from "../queue.js"
+import {notificationQueue} from "../Queue/queue.js"
 import { ApiError } from "../utils/api_error.js";
 import { ApiResponse } from "../utils/api_response.js"
 import { asyncHandler } from "../utils/async_handler.js";
@@ -12,6 +12,8 @@ const welcome_emails= asyncHandler( async(req,res)=>{
             to:req.body.to,
         },
         {
+         priority:1,
+         delay:3000,
          attempts: 3,
          backoff: {
          type: "fixed",

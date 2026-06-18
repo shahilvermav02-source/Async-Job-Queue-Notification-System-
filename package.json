@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "services": "docker compose up -d redis mongo",
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "worker": "node src/worker.js"
   },

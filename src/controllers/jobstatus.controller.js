@@ -1,4 +1,4 @@
-import { notificationQueue } from "../queue.js";
+import { notificationQueue } from "../Queue/queue.js";
 import { asyncHandler } from "../utils/async_handler.js";
 import { ApiError } from "../utils/api_error.js"; 
 import { ApiResponse } from "../utils/api_response.js";
@@ -18,8 +18,11 @@ const jobstatus = asyncHandler(async(req,res)=>{
         new ApiResponse(
             200,
             {
-                jobId: job.id,
-                state
+                id: job.id,
+                state,
+                attemptsMade: job.attemptsMade,
+                processedOn: job.processedOn,
+                finishedOn: job.finishedOn
             },
             "Job status fetched successfully"
         )

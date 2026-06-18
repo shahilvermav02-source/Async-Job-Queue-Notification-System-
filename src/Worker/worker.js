@@ -1,6 +1,6 @@
 import { Worker } from "bullmq";
-import { connection } from "./queue.js";
-import { sendMail } from "./services/mail.services.js";
+import { connection } from "../Queue/queue.js";
+import { sendMail } from "../services/mail.services.js";
 
 console.log("🚀 Worker file started");
 
