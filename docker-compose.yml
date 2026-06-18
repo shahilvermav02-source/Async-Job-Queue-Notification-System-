@@ -3,15 +3,11 @@ services:
   redis:
     image: redis
     container_name: redis-container
-
     ports:
       - "6379:6379"
 
   producer:
-    build:
-      context: .
-      dockerfile: Dockerfile
-
+    build: .
     container_name: producer-container
 
     ports:
@@ -24,11 +20,10 @@ services:
       - .env
 
   worker:
-    build:
-      context: .
-      dockerfile: Dockerfile(1)
-
+    build: .
     container_name: worker-container
+
+    command: npm run worker
 
     depends_on:
       - redis

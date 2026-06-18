@@ -10,7 +10,7 @@
     "services": "docker compose up -d redis mongo",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "worker": "node src/worker.js"
+    "worker": "node src/Worker/worker.js"
   },
   "dependencies": {
     "bullmq": "^5.78.1",

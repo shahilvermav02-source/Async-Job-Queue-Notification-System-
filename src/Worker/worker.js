@@ -9,7 +9,7 @@ const worker1 = new Worker(
   async (job) => {
     console.log("🔥 Worker 1 processing Job:", job.id);
      await new Promise(resolve=>
-            setTimeout(resolve,1000000)
+            setTimeout(resolve,10000)
         );
     await sendMail(job.data);
   },
